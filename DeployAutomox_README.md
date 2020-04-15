@@ -22,7 +22,7 @@ PS C:\> Install-Module -Name PSFalcon
 
 
 
-3. **OAuth2 App Creation**: Interacting with the CrowdStrike Falcon OAuth2 APIs requires an **[API Client ID and Secret](https://falcon.crowdstrike.com/support/api-clients-and-keys)** and a valid OAuth2 token. You will need to create this in the Falcon console to use for the script. This will give you your clientId and clientSecret, which are the only 2 parameters passed to the Deploy-Automox module that is installed by Deploy-Automox.ps1. These are used to create your OAuth2 token used for authentication. 
+3. **OAuth2 App Creation**: Interacting with the CrowdStrike Falcon OAuth2 APIs requires an **[API Client ID and Secret](https://falcon.crowdstrike.com/support/api-clients-and-keys)** and a valid OAuth2 token. You will need to create this in the Falcon console to use for the script. This will give you your 'Client Id' and 'Client Secret', which are the only 2 parameters passed to the Deploy-Automox module that is installed by Deploy-Automox.ps1. These are used to create your OAuth2 token used for authentication. 
     
 
 4. **List of Hosts for Deployment**: Using the Falcon Console, export Hosts > Host Management as a CSV. Remove all columns in the CSV except Hostname, Last Seen and Host ID of the devices you want to deploy the Automox agent to. Be sure to keep the column headers in the .csv. "Hostname, Last Seen and Host ID".  
