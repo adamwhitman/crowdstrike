@@ -1,4 +1,4 @@
-# crowdstrike
+# Deploying the Automox agent using the Falcon sensor
 
 # Prerequisites
 1.  **Ensure supported Powershell verion is installed**: Device running script needs to have **[PowerShell 5.1+](https://github.com/PowerShell/PowerShell#get-powershell)** installed. You can check you version by runnning the following command:
