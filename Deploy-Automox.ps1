@@ -1,5 +1,3 @@
-#deploys the Automox agent to device running the Falcon sensor
-
 function Deploy-AxAgent {
 
 [CmdletBinding()]
