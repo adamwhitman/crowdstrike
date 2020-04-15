@@ -1,8 +1,6 @@
 # crowdstrike
 
-# Deploy-Automox
-
-### Prerequites
+# Prerequites
 1.  Device running script needs to have **[PowerShell 5.1+](https://github.com/PowerShell/PowerShell#get-powershell)** installed
 
 
@@ -21,10 +19,18 @@
 
 6. **Upload the Automox .msi file**: Upload the ```Automox_Installer-1.0.28.msi``` file using the Falcon Console by navigating to Response Scripts & Files > "PUT" Files. From there, click 'Upload File' and upload the  ```Automox_Installer-1.0.28.msi``` file. DO NOT change the naming of the .msi file. The File Name must read 'Automox_Installer-1.0.28.msi'. This gets uploaded to the working directory of the device for Falcon sensor
 
-7.  **Upload the installation script to install Automox**: You must upload the installation command powershell syntax as a ps1 script into the Falcon Console. Then, the Deploy-Automox script will use the uploaded ps1 script to run the installation command against the .msi file in the devices working directory for the Falcon sensor. You create the script using the Falcon Console by navigating to Response Scripts & Files > Custom Scripts. From there, click 'Create a script'. You will need to ensure the 2 values below are added to the custom script exactly as they are shown. 
+7.  **Upload the installation script to install Automox**: You must create the Automox installation command as a ps1 script in the Falcon Console. Then, the Deploy-Automox script will use the created ps1 script to run the installation command against the Automox .msi file in the devices working directory for the Falcon sensor. You create the script using the Falcon Console by navigating to Response Scripts & Files > Custom Scripts. From there, click 'Create a script'. You will need to ensure the 2 values below are added to the custom script exactly as they are shown, and the script permissions are set accordingly:
 ```
 Script Name:   AxAgentInstall.ps1
-Script:        .\Automox_Installer-1.0.28.msi ACCESSKEY=<your_org_access_key> /quiet 
+Script:        .\Automox_Installer-1.0.28.msi ACCESSKEY=<your_org_access_key> /quiet
+
+Permission:    RTR Active Responder and RTR Administrator
 ````
-**NOTE** You can add as many arguments to the install command script. The abovew is for basic quiet install of Automox into your organization. visit https://support.automox.com for more install options for the Automox agent.
+**NOTE** You can add as many arguments to the Automox install command script. The above is for basic quiet install of Automox into your organization. visit https://support.automox.com for more install options for the Automox agent.
+
+8. Once you have the custom script saved you can now run the Deploy-Automox.ps1 script.
+
+
+# Deploy-Automox.ps1 
+
 
