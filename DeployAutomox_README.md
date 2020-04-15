@@ -13,12 +13,10 @@ Version
 
 2. Download and install the PSFalcon modules: You will need these for the Deploy-Automox.ps1 script to run as it calls several of these modules. To install it, you simply need to run ```Install-Module -Name PSFalcon``` from the Powershell CLI on device you will be deploying the agent from.
 
-```PS C:\> Install-Module -Name PSFalcon
+```PS C:\> Install-Module -Name PSFalcon```
 
-PS C:\> ```
 
 This will download and install the modules needed.
-
 
 3. **OAuth2 App Creation**: Interacting with the CrowdStrike Falcon OAuth2 APIs requires an **[API Client ID and Secret](https://falcon.crowdstrike.com/support/api-clients-and-keys)** and a valid OAuth2 token. You will need to create this in the Falcon console to use for the script. This will give you your clientId and clientSecret, which are the only 2 parameters passed to the Deploy-Automox module that is installed by Deploy-Automox.ps1. These are used to create your OAuth2 token used for authentication. 
     
