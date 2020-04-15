@@ -1,7 +1,7 @@
 # crowdstrike
 
 # Prerequites
-1.  **Ensure supported PS verion is installed**: Device running script needs to have **[PowerShell 5.1+](https://github.com/PowerShell/PowerShell#get-powershell)** installed
+1.  **Ensure supported Powershell verion is installed**: Device running script needs to have **[PowerShell 5.1+](https://github.com/PowerShell/PowerShell#get-powershell)** installed. You can check you version by runnning the following command:
 
 
 2. **OAuth2 App Creation**: Interacting with the CrowdStrike Falcon OAuth2 APIs requires an **[API Client ID and Secret](https://falcon.crowdstrike.com/support/api-clients-and-keys)** and a valid OAuth2 token. You will need to create this in the Falcon console to use for the script. This will give you your clientId and clientSecret, which are the only 2 parameters passed to the Deploy-Automox module that is installed by Deploy-Automox.ps1. These are used for Authentication.
