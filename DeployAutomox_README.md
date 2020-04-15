@@ -33,9 +33,8 @@ Script:        .\Automox_Installer-1.0.28.msi ACCESSKEY=<your_org_access_key> /q
 
 Permission:    RTR Active Responder and RTR Administrator
 ````
-You will need to add your Automox organization access key where it says ```<your_org_access_key>``` to the script command
-
-example
+You will need to add your Automox organization access key where it says ```<your_org_access_key>``` to the script command. 
+example:
 ```ACCESSKEY=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx```
 
 **NOTE** You can add as many arguments to the Automox install command script. The above is for basic quiet install of Automox into your organization. visit https://support.automox.com for more install options for the Automox agent.
