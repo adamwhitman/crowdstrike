@@ -13,7 +13,11 @@ Version
 
 2. Download and install the PSFalcon modules: You will need these for the Deploy-Automox.ps1 script to run as it calls several of these modules. To install it, you simply need to run ```Install-Module -Name PSFalcon``` from the Powershell CLI on device you will be deploying the agent from.
 
-```PS C:\> Install-Module -Name PSFalcon```
+```
+
+PS C:\> Install-Module -Name PSFalcon
+
+```
 
 
 This will download and install the modules needed.
