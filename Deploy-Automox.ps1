@@ -1,3 +1,5 @@
+#deploys the Automox agent to device running the Falcon sensor
+
 function Deploy-AxAgent {
 
 [CmdletBinding()]
@@ -12,11 +14,7 @@ param(
         [Parameter(Mandatory = $true)]
         [ValidateLength(40,40)]
         [string]
-        $Secret,
-
-        [Parameter(Mandatory = $true)]
-        [string]
-        $scriptfile
+        $Secret
         )
 
 Get-CsToken -Id $Id -Secret $Secret
@@ -43,14 +41,10 @@ $scrpt = Get-RtrScriptId | select "resources"
 $scrbuild = Get-RtrScriptInfo -Id ($scrpt."resources")
 $axscrpt = $scrbuild | ForEach-Object {$_.resources} | select ("name", "content") | ? {$_.name -match "Automox Agent Install"} | select "content"
 $axscript = $axscrpt."content"
-$axscript1=('-CloudFile=' + '"' +  $scriptfile + '"' +  ' ' + '-CommandLine="-Verbose true"')
+$axscript1=('-CloudFile=' + '"AxAgentInstall.ps1"' + ' ' + '-CommandLine="-Verbose true"' )
 
 
-
-
+#commands to push the ax .msi and run the installation script
 Send-RtrCommand -Id $axbatchid -Command 'put' -String 'Automox_Installer-1.0.28.msi'
 Send-RtrCommand -Id $axbatchid -Command 'runscript' -String $axscript1
-
-
-remove-item C:\HostList.csv
 }
