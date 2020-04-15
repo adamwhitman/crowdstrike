@@ -35,7 +35,7 @@ PS C:\> Install-Module -Name PSFalcon
 
 6. **Required location of HostList.csv**: Put the HostList.csv file in the ```C:``` directory of the device you will be running the script from. The script calls ```c:\HostList.csv```, so ```HostList.csv``` has to be in the ```C:``` directory 
 
-7. **Upload the Automox .msi file**: Upload the ```Automox_Installer-1.0.28.msi``` file using the Falcon Console by navigating to Response Scripts & Files > "PUT" Files. From there, click 'Upload File' and upload the  ```Automox_Installer-1.0.28.msi``` file. DO NOT change the naming of the .msi file. The File Name must read 'Automox_Installer-1.0.28.msi'. This gets uploaded to the working directory of the device for Falcon sensor
+7. **Upload the Automox .msi file**: Upload the ```Automox_Installer-1.0.28.msi``` file using the Falcon Console by navigating to Response Scripts & Files > "PUT" Files. From there, click 'Upload File' and upload the  ```Automox_Installer-1.0.28.msi``` file. DO NOT change the naming of the .msi file. The File Name must read 'Automox_Installer-1.0.28.msi'. This gets uploaded to the working directory of the device for Falcon sensor. [Download Automox_Installer-1.0.28.msi][Automox_Installer-1.0.28.msi]
 
 8.  **Upload the installation script to install Automox**: You must create the Automox installation command as a ps1 script in the Falcon Console. Then, the Deploy-Automox script will use the created ps1 script to run the installation command against the Automox .msi file in the devices working directory for the Falcon sensor. You create the script using the Falcon Console by navigating to Response Scripts & Files > Custom Scripts. From there, click 'Create a script'. You will need to ensure the 2 values below are added to the custom script exactly as they are shown, and the script permissions are set accordingly:
 ```
@@ -54,7 +54,7 @@ Permission:    RTR Active Responder and RTR Administrator
 
 ### Deploy-Automox.ps1 
 
-1. Copy the Deploy-Automox.ps1 script locally to the device you will be performing the deployment from. 
+1. Copy the [Deploy-Automox.ps1](https://github.com/shakeybonesz/crowdstrike/blob/master/Deploy-Automox.ps1) script locally to the device you will be performing the deployment from. 
 
 2. execute the ```Deploy-Automox.ps1``` script on the device. This script creates a powershell module on the device called ```Deploy-AxAgent```
 
@@ -71,7 +71,7 @@ Secret: <string>
 
 The ```Id``` and ```Secret``` parameter is your 'client ID' and 'client Secret' you get from your OAuth2 app you created in the Falcon console in Step 2 of the Prerequisites instructions above.
 
-3. You can now run Deploy-AxAgent to perofmr the install of the Automox agent to the devices you specified in your HostList.csv using the Falcon console. The final command would go as follows:
+3. You can now run Deploy-AxAgent to perform the install of the Automox agent to the devices you specified in your HostList.csv using the Falcon console. The final command would go as follows:
 
 ```
 
