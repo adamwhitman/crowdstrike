@@ -43,4 +43,17 @@ Permission:    RTR Active Responder and RTR Administrator
 
 ### Deploy-Automox.ps1 
 
+1. Copy the Deploy-Automox.ps1 script locally to the device you will be performing the deployment from. 
 
+2. execute the ```Deploy-Automox.ps1``` script on the device. This script creates a powershell module on the device called ```Deploy-AxAgent```
+
+Here is an example of the usage after running the ```Deploy-Automox.ps1``
+
+```PS C:\> .\Deploy-Automox.ps1
+
+PS C:\> Deploy-AxAgent
+cmdlet Deploy-AxAgent at command pipeline position 1
+Supply values for the following parameters:
+Id: 
+Secret: 
+```
