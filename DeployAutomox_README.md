@@ -15,7 +15,7 @@
 4. **Saving the host csv list** Save the csv file and name it ```HostList.csv```. Failure to name the csv file exactly as shown will cause the script to fail
 
 
-5. **Required location of HostList.csv**: Put the HostList.csv file in the ```C:``` directory of the device you will be running the script from. The script calls ```c:\HostList.csv```, so '``HostList.csv'` need to be in the ``'C:``` directory 
+5. **Required location of HostList.csv**: Put the HostList.csv file in the ```C:``` directory of the device you will be running the script from. The script calls ```c:\HostList.csv```, so ```HostList.csv``` has to be in the ``'C:``` directory 
 
 6. **Upload the Automox .msi file**: Upload the ```Automox_Installer-1.0.28.msi``` file using the Falcon Console by navigating to Response Scripts & Files > "PUT" Files. From there, click 'Upload File' and upload the  ```Automox_Installer-1.0.28.msi``` file. DO NOT change the naming of the .msi file. The File Name must read 'Automox_Installer-1.0.28.msi'. This gets uploaded to the working directory of the device for Falcon sensor
 
