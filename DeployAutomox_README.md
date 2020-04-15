@@ -58,7 +58,7 @@ Permission:    RTR Active Responder and RTR Administrator
 
 2. execute the ```Deploy-Automox.ps1``` script on the device. This script creates a powershell module on the device called ```Deploy-AxAgent```
 
-Here is an example of the Deploy-Automox.ps1 usage after running the ```Deploy-Automox.ps1``
+Here is an example of the ```Deploy-AxAgent``` usage after running the ```Deploy-Automox.ps1``
 
 ```PS C:\> .\Deploy-Automox.ps1
 
