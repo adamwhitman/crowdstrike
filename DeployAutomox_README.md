@@ -60,7 +60,8 @@ Permission:    RTR Active Responder and RTR Administrator
 
 Here is an example of the ```Deploy-AxAgent``` usage after running the ```Deploy-Automox.ps1```
 
-```PS C:\> .\Deploy-Automox.ps1
+```
+PS C:\> .\Deploy-Automox.ps1
 
 PS C:\> Deploy-AxAgent
 cmdlet Deploy-AxAgent at command pipeline position 1
