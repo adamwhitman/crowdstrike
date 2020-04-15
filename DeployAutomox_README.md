@@ -1,7 +1,7 @@
 # Deploying the Automox agent using the Falcon sensor
 
 ### Prerequisites
-1.  **Ensure supported Powershell verion is installed**: Device running script needs to have **[PowerShell 5.1+](https://github.com/PowerShell/PowerShell#get-powershell)** installed. You can check you version by runnning the following command:
+1.  **Ensure supported Powershell verion is installed**: Device running script needs to have **[PowerShell 5.1+](https://github.com/PowerShell/PowerShell#get-powershell)** installed. You can check your Powershell version by runnning the following command from the Powershell CLI on the device you will be deploying the agent from.
 
 ```
 PS C:\> Get-Host | Select-Object Version
