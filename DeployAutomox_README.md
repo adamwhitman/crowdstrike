@@ -54,6 +54,8 @@ Here is an example of the usage after running the ```Deploy-Automox.ps1``
 PS C:\> Deploy-AxAgent
 cmdlet Deploy-AxAgent at command pipeline position 1
 Supply values for the following parameters:
-Id: 
-Secret: 
+Id: <string>
+Secret: <string> 
 ```
+
+The ```Id``` and ```Secret``` parameter is your 'client ID' and 'client Secret' you get from your OAuth2 app you created in the Falcon console in Step 2 of the Prerequisites instructions above.
