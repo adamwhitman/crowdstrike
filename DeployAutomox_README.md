@@ -58,7 +58,7 @@ Permission:    RTR Active Responder and RTR Administrator
 
 2. execute the ```Deploy-Automox.ps1``` script on the device. This script creates a powershell module on the device called ```Deploy-AxAgent```
 
-Here is an example of the usage after running the ```Deploy-Automox.ps1``
+Here is an example of the Deploy-Automox.ps1 usage after running the ```Deploy-Automox.ps1``
 
 ```PS C:\> .\Deploy-Automox.ps1
 
@@ -70,3 +70,14 @@ Secret: <string>
 ```
 
 The ```Id``` and ```Secret``` parameter is your 'client ID' and 'client Secret' you get from your OAuth2 app you created in the Falcon console in Step 2 of the Prerequisites instructions above.
+
+3. You can now run Deploy-AxAgent to perofmr the install of the Automox agent to the devices you specified in your HostList.csv using the Falcon console. The final command would go as follows:
+
+```
+
+Deploy-AxAgent -Id '<your_client_id>' -Secret '<your_client_secret>'
+
+
+```
+
+
