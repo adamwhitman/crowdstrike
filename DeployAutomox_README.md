@@ -80,4 +80,6 @@ Deploy-AxAgent -Id '<your_client_id>' -Secret '<your_client_secret>'
 
 ```
 
+The Automox agent should now be installed successfully on all your devices and reporting into your Automox console!
+
 
