@@ -18,7 +18,7 @@ param(
 Get-CsToken -Id $Id -Secret $Secret
 
 #Get host ids for each host you want to deploy the ax agent to
-$hostid = Import-Csv C:\HostList.csv | select 'Host ID'
+$hostid = Import-Csv C:\temp\HostList.csv | select 'Host ID'
 
 #assign batch_id to list of hosts 
 $response = (Start-RtrBatch -Id $($hostid."Host ID"))
