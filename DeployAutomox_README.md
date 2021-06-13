@@ -15,7 +15,7 @@ Version
 
 
 
-3. **API Credentials**: Interacting with the CrowdStrike Falcon API requires an **[API Client ID and Secret](https://falcon.crowdstrike.com/support/api-clients-and-keys)**. You will need to create this in the Falcon console to use for the script. 
+3. **API Credentials**: Interacting with the CrowdStrike Falcon API requires an **[API Client ID and Secret](https://falcon.crowdstrike.com/support/api-clients-and-keys)**. You will need to create this from the Falcon console to use for the script. 
     
 
 7. **Upload the Automox .msi file**: Upload the ```Automox_Installer-1.0.31.msi``` file using the Falcon Console by navigating to Response Scripts & Files > "PUT" Files. From there, click 'Upload File' and upload the  ```Automox_Installer-1.0.28.msi``` file. DO NOT change the naming of the .msi file. The File Name must read 'Automox_Installer-1.0.28.msi'. This gets uploaded to the working directory of the device for Falcon sensor.  Here is the link to Download the [Automox_Installer-1.0.28.msi](https://console.automox.com/Automox_Installer-1.0.31.msi)
