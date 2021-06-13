@@ -11,18 +11,11 @@ Version
 5.1.18362.628
 ```
 
-2. Download and install the PSFalcon module: You will need these for the Deploy-Automox.ps1 script to run as it calls several of these functions. To install it, you simply need to run ```Install-Module -Name PSFalcon``` from the Powershell CLI on device you will be deploying the agent from. Example below
-
-```
-
-PS C:\> Install-Module -Name PSFalcon
-
-```
+2. Follow the instruction to download and install the PSFalcon module. https://github.com/CrowdStrike/psfalcon/wiki/Installation
 
 
 
-
-3. **OAuth2 API Keys**: Interacting with the CrowdStrike Falcon API requires an **[API Client ID and Secret](https://falcon.crowdstrike.com/support/api-clients-and-keys)**. You will need to create this in the Falcon console to use for the script. This will give you your 'Client Id' and 'Client Secret', which are the only 2 parameters passed to the Deploy-Automox module that is installed by Deploy-Automox.ps1. 
+3. **API Credentials**: Interacting with the CrowdStrike Falcon API requires an **[API Client ID and Secret](https://falcon.crowdstrike.com/support/api-clients-and-keys)**. You will need to create this in the Falcon console to use for the script. This will give you your 'Client Id' and 'Client Secret', which are the only 2 parameters passed to the Deploy-Automox module that is installed by Deploy-Automox.ps1. 
     
 
 4. **List of Hosts for Deployment**: Using the Falcon Console, export Hosts > Host Management as a CSV. Remove all columns in the CSV except Hostname, Last Seen and Host ID of the devices you want to deploy the Automox agent to. Be sure to keep the column headers in the .csv. "Hostname, Last Seen and Host ID".  
