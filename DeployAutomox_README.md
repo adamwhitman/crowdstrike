@@ -15,16 +15,8 @@ Version
 
 
 
-3. **API Credentials**: Interacting with the CrowdStrike Falcon API requires an **[API Client ID and Secret](https://falcon.crowdstrike.com/support/api-clients-and-keys)**. You will need to create this in the Falcon console to use for the script. This will give you your 'Client Id' and 'Client Secret', which are the only 2 parameters passed to the Deploy-Automox module that is installed by Deploy-Automox.ps1. 
+3. **API Credentials**: Interacting with the CrowdStrike Falcon API requires an **[API Client ID and Secret](https://falcon.crowdstrike.com/support/api-clients-and-keys)**. You will need to create this in the Falcon console to use for the script. 
     
-
-4. **List of Hosts for Deployment**: Using the Falcon Console, export Hosts > Host Management as a CSV. Remove all columns in the CSV except Hostname, Last Seen and Host ID of the devices you want to deploy the Automox agent to. Be sure to keep the column headers in the .csv. "Hostname, Last Seen and Host ID".  
-   
-
-5. **Saving the host csv list** Save the csv file and name it ```HostList.csv```. Failure to name the CSV file exactly as shown will cause the script to fail
-
-
-6. **Required location of HostList.csv**: Put the HostList.csv file in the ```C:``` directory of the device you will be running the script from. The script calls ```c:\HostList.csv```, so ```HostList.csv``` has to be in the ```C:``` directory 
 
 7. **Upload the Automox .msi file**: Upload the ```Automox_Installer-1.0.31.msi``` file using the Falcon Console by navigating to Response Scripts & Files > "PUT" Files. From there, click 'Upload File' and upload the  ```Automox_Installer-1.0.28.msi``` file. DO NOT change the naming of the .msi file. The File Name must read 'Automox_Installer-1.0.28.msi'. This gets uploaded to the working directory of the device for Falcon sensor.  Here is the link to Download the [Automox_Installer-1.0.28.msi](https://console.automox.com/Automox_Installer-1.0.31.msi)
 
@@ -57,17 +49,15 @@ PS C:\> .\Deploy-Automox.ps1
 PS C:\> Deploy-AxAgent
 cmdlet Deploy-AxAgent at command pipeline position 1
 Supply values for the following parameters:
-Id: <string>
-Secret: <string> 
+Id: <string> (Your API Client ID)
+Secret: <string> (Your API Client Secret) 
+HostGroup: "<string>" (The host group of devices you want to deploy the automox agent to. NOTE: You must put the group name in ". example: "windows group"
 ```
 
-The ```Id``` and ```Secret``` parameter is your 'client ID' and 'client Secret' you get from your OAuth2 app you created in the Falcon console in Step 2 of the Prerequisites instructions above.
 
-3. You can now run Deploy-AxAgent to perform the install of the Automox agent to the devices you specified in your HostList.csv using the Falcon console. The final command would go as follows:
+Example command:
 
-```
-
-Deploy-AxAgent -Id '<your_client_id>' -Secret '<your_client_secret>'
+Deploy-AxAgent -Id '<your_client_id>' -Secret '<your_client_secret>' -HostGroup "<your_host_group>" 
 
 
 ```
