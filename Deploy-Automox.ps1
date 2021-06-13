@@ -12,20 +12,22 @@ param(
         [Parameter(Mandatory = $true)]
         [ValidateLength(40,40)]
         [string]
-        $Secret
+        $Secret,
+
+        [Parameter(Mandatory = $true)]
+        [string]
+        $HostGroup
         )
 
 Request-FalconToken -ClientId $Id -ClientSecret $Secret
 
-#Get host ids for each host you want to deploy the ax agent to
-$hostidlist = Import-Csv C:\temp\HostList.csv | select 'Host ID'
-$hostids = $hostidlist."Host ID"
+#Get Group you want to deploy the ax agent to
+$groupfilter = Get-FalconHostGroup -detailed | select ("name", "id") | ? {$_.name -match $HostGroup} | select "id"
+$group = $groupfilter."id"
 
-#assign batch_id to list of hosts 
-$response = (Start-FalconSession -HostIds $hostids)
-$batbuild = $response | select "batch_id"
-$axbatchid = $batbuild."batch_id"
-
+#get devices within group to deploy ax agent to
+$devicelist = Get-Falconhost -detailed | select ("device_id", "platform_name", "groups") | ? {$_.groups -match $group} | select ("device_id", "platform_name")
+$hostids = $devicelist."device_id"
 
 
 #push the Automox msi file to the device in the Crowdstrike RTR working directy "C:\"
