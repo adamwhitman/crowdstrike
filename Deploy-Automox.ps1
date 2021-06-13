@@ -26,7 +26,7 @@ $groupfilter = Get-FalconHostGroup -detailed | select ("name", "id") | ? {$_.nam
 $group = $groupfilter."id"
 
 #get devices within group to deploy ax agent to
-$devicelist = Get-Falconhost -detailed | select ("device_id", "platform_name", "groups") | ? {$_.groups -match $group} | select ("device_id", "platform_name")
+$devicelist = Get-Falconhost -detailed | select ("device_id", "platform_name", "groups") | ? {$_.groups -eq $group} | select ("device_id", "platform_name")
 $hostids = $devicelist."device_id"
 
 
