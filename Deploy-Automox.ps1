@@ -15,34 +15,31 @@ param(
         $Secret
         )
 
-Get-CsToken -Id $Id -Secret $Secret
+Request-FalconToken -ClientId $Id -ClientSecret $Secret
 
 #Get host ids for each host you want to deploy the ax agent to
-$hostid = Import-Csv C:\temp\HostList.csv | select 'Host ID'
+$hostidlist = Import-Csv C:\temp\HostList.csv | select 'Host ID'
+$hostids = $hostidlist."Host ID"
 
 #assign batch_id to list of hosts 
-$response = (Start-RtrBatch -Id $($hostid."Host ID"))
+$response = (Start-FalconSession -HostIds $hostids)
 $batbuild = $response | select "batch_id"
 $axbatchid = $batbuild."batch_id"
 
 
 
 #push the Automox msi file to the device in the Crowdstrike RTR working directy "C:\"
-$putfile = Get-RtrFileId | select "resources"
-$build1 = Get-RtrFileInfo -Id ($putfile."resources")
-$axfile = $build1 | ForEach-Object {$_.resources} | select ("name", "id") | ? {$_.name -match "Automox_Installer-1.0.28.msi"} | select "id"
-$axfileid = $axfile."id"
+$axfile = Get-FalconPutFile -Detailed -All | select ("id", "name") | ? {$_.name -match "Automox_installer-1.0.31.msi"} | select "name"
+$axfileid = $axfile."name"
     
 
 #get script for the put command 
-$scrpt = Get-RtrScriptId | select "resources"
-$scrbuild = Get-RtrScriptInfo -Id ($scrpt."resources")
-$axscrpt = $scrbuild | ForEach-Object {$_.resources} | select ("name", "content") | ? {$_.name -match "Automox Agent Install"} | select "content"
+$axscrpt = Get-FalconScript -Detailed -All | select ("content", "name") | ? {$_.name -match  "AxAgentInstall.ps1"} | select "content"
 $axscript = $axscrpt."content"
 $axscript1=('-CloudFile=' + '"AxAgentInstall.ps1"' + ' ' + '-CommandLine="-Verbose true"' )
 
 
 #commands to push the ax .msi and run the installation script
-Send-RtrCommand -Id $axbatchid -Command 'put' -String 'Automox_Installer-1.0.28.msi'
-Send-RtrCommand -Id $axbatchid -Command 'runscript' -String $axscript1
+Invoke-FalconRTR -HostIds $hostids -Command 'put' -Arguments $axfileid -QueueOffline $true
+Invoke-FalconRTR -HostIds $hostids -Command 'runscript' -Arguments $axscript1 -QueueOffline $true
 }
