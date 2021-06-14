@@ -21,7 +21,7 @@ param(
 
 Request-FalconToken -ClientId $Id -ClientSecret $Secret
 
-#Get Group you want to deploy the ax agent to
+#Get the group you want to deploy the ax agent to
 $groupfilter = Get-FalconHostGroup -detailed | select ("name", "id") | ? {$_.name -match $HostGroup} | select "id"
 $group = $groupfilter."id"
 
