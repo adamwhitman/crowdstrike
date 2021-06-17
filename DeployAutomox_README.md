@@ -1,7 +1,7 @@
 # Deploying the Automox agent using the Falcon sensor
 
 ### Prerequisites
-1. You need to have RTR enabled in the Response policy assigned to the device in Falcon. Ensure "runcscript" and "put" are also fully enabled. The script uses Crowdstrike RTR to push the agent out.
+1. You need to have RTR enabled in the Response policy assigned to the device in Falcon. Ensure "runcscript" and "put" are also fully enabled. The script uses Crowdstrike RTR to push the agent out. You also need to have full Falcon admin priviliges. 
 
 2.  **Ensure supported Powershell verion is installed**: Device running script needs to have **[PowerShell 5.1+](https://github.com/PowerShell/PowerShell#get-powershell)** installed. You can check your Powershell version by runnning the following command from the Powershell CLI on the device you will be deploying the agent from.
 
