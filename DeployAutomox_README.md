@@ -65,5 +65,6 @@ Deploy-AxAgent -Id '<your_client_id>' -Secret '<your_client_secret>' -HostGroup 
 ```
 
 The Automox agent should now be installed successfully on all your devices and reporting into your Automox console!
+`-QueueOffline is set to true in the function. So by default we will queue the install on offline devices and will push the install the next time they login. This can also be disabled.
 
 
