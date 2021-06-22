@@ -32,7 +32,8 @@ Prerequisites
 7. Once you have the custom script saved you can now run the Deploy-Automox.ps1 script.
 
 
-Deploy-Automox.ps1
+
+**Deploy-Automox.ps1**
 1. Copy the Deploy-Automox.ps1 script locally to the device you will be performing the deployment from.
 
 2. execute the Deploy-Automox.ps1 script on the device. This script creates a powershell function called Deploy-AxAgent
