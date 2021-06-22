@@ -43,6 +43,7 @@ Prerequisites
 
   Here is an example of the Deploy-AxAgent usage after running the Deploy-Automox.ps1
 
+  ```
   PS C:\> .\Deploy-Automox.ps1
 
   PS C:\> Deploy-AxAgent
@@ -52,8 +53,11 @@ Prerequisites
   Secret: <string> (Your API Client Secret) 
   HostGroup: "<string>" (The host group of devices you want to deploy the automox agent to. NOTE: You must put the group name in ". example: "windows group"
   Example command:
+  ```
 
+  ```
   Deploy-AxAgent -Id '<your_client_id>' -Secret '<your_client_secret>' -HostGroup "<your_host_group>"
+  ```
 
   The Automox agent should now be installed successfully on all your devices and reporting into your Automox console!
 
