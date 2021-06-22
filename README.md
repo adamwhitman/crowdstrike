@@ -6,10 +6,13 @@ Prerequisites
 
 2. Ensure supported Powershell verion is installed: Device running script needs to have PowerShell 5.1+ installed. You can check your Powershell version by runnning the following command from the Powershell CLI on the device you will be deploying the agent from.
 
+  ```
   PS C:\> Get-Host | Select-Object Version
 
   version  
   5.1.18362.628
+  
+  ```
 
 3. Follow the instruction to download and install the PSFalcon module. https://github.com/CrowdStrike/psfalcon/wiki/Installation
 
